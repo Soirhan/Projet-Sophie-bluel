@@ -53,10 +53,84 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+.admin-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 33px;
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	z-index: 1000;
+}
+
+.admin-bar img{
+	width: 20px;
+	height: 20px;
+	padding: 3px;
+}
+
+.barre-active {
+  margin-top: 90px;
+}
+
+/******Partie Admin***********/
+.bloc-edition{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	height: 65px;
+}
+
+.bloc-edition p{
+	color: white;
+	margin-left: 8px;
+}
+
+.bloc-edition img{
+	width: 25px;
+	height: 25px;
+}
+
+.title-project{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 60px;
+}
+
+.bloc-edit{
+	display: flex;
+	margin-left: 3em;
+	align-items: center;
+	margin-bottom: 2.2em;
+}
+
+.bloc-edit img{
+	width: 16px;
+	height: 16px;
+	margin-right: 6px;
+}
+
+.bloc-edit a{
+	text-decoration: none;
+	color: black;
+}
+
+.bloc-edit a:hover{
+	color: #B1663C;
+}
+
+/****************************/
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 40px 0;
 }
 section {
 	margin: 50px 0
@@ -95,12 +169,21 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+header li:hover {
+	cursor: pointer;
 	color: #B1663C;
+}
+li a {
+  text-decoration: none;
+  color: inherit; /* hérite la couleur du texte environnant */
+}
+ul li img{
+	height: 20px;
 }
 #introduction {
 	display: flex;
 	align-items: center;
+	margin-bottom: 150px;
 }
 #introduction figure {
 	flex: 1
@@ -108,11 +191,13 @@ li:hover {
 #introduction img {
 	display: block;
 	margin: auto;
-	width: 80%;
+	width: 100%;
+	height: 355px;
 }
 
 #introduction article {
-	flex: 1
+	flex: 1;
+	margin-left: 60px;
 }
 #introduction h2 {
 	margin-bottom: 1em;
@@ -120,11 +205,48 @@ li:hover {
 
 #introduction p {
 	margin-bottom: 0.5em;
+	width: 400px;
+	color: #333;
 }
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+/* Conteneur centré des filtres */
+.sous-projet {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+/* Style des boutons dynamiques */
+.filter-button {
+  padding: 10px 20px;
+  border: 1px solid #1D6154;
+  background-color: white;
+  color: #1D6154;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Survol */
+.filter-button:hover {
+  background-color: #1D6154;
+  color: white;
+}
+
+/* Bouton actif */
+.filter-button.active {
+  background-color: #1D6154;
+  color: white;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -134,8 +256,14 @@ li:hover {
 }
 
 .gallery img {
-	width: 100%;
-
+	width: 99%;
+	height: 500px;
+	object-fit: cover;
+	display: block;
+	margin: 5px;
+}
+figcaption{
+	margin-top: 8px;
 }
 #contact {
 	width: 50%;
@@ -186,3 +314,325 @@ footer nav ul {
 	margin: 2em
 }
 
+/*******Partie modale***********/
+
+.modale-edition {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.contenu-modale {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  height: 720px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+#message-utilisateur{
+	color: red;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.fleche-retour {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.fermer-modale {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.title-modale{
+	text-align: center;
+	font-size: 25px;
+}
+
+.title-modale h3{
+	margin-top: 40px;
+}
+
+.nav-modale {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #eee;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.nav-btn.active {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+.contenu-galerie{
+	display: flex;
+	flex-wrap: wrap;
+	width: 500px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #b8b8b8;
+}
+
+.contenu-galerie img{
+	width: 85px;
+}
+
+.vue-modale {
+  display: none;
+}
+
+.vue-modale.active {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-icon{
+	position: relative;
+	bottom: 120px;
+	left: 62px;
+	background-color: black;
+	width: 25px;
+	color: rgb(235, 233, 233);
+	border-radius: 3px;
+}
+
+.bas-modale{
+	display: flex;
+	justify-content: center;
+}
+
+.bouton-ajout-photo{
+	font-family: 'Syne';
+	text-align: center;
+	background-color: #1D6154;
+	color: white;
+	width: 210px;
+	height: 35px;
+	border: 1px solid #1D6154;
+	border-radius: 30px;
+}
+/*******Formulaire d'ajout d'image*************/
+.form-ajout{
+	width: 400px;
+}
+
+#titre-media{
+	width: 100%;
+	height: 60px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	font-size: 16px;
+	color: #333;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+
+.categ{
+	margin-bottom: 30px;
+	height: 100px;
+	border-bottom: 1px solid #b8b8b8;
+}
+
+#categorie-media{
+	width: 100%;
+	height: 20px;
+	border-radius: 5px;
+	border: none;
+	font-size: 16px;
+	color: #333;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+
+.upload-zone {
+  background-color: #e8f1f6;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.upload-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#customUploadBtn {
+  background-color: #cbd6dc;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #306685;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#customUploadBtn:hover {
+  background-color: #b0c4d0;
+}
+
+#previewImage {
+  max-width: 30%;
+  max-height: 200px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/***** Bouton Valider *****/
+button[type="submit"] {
+  background-color: rgb(168, 167, 167);
+  color: white;
+  border: none;
+  border-radius: 60px;
+  padding: 10px 40px;
+  width: 250px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px auto 0;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #14463e;
+}
+/***********Partie Connexion**************/
+
+
+.header-log {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+    height: 45px;
+}
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 26px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1 span {
+	font-size:10px;
+	letter-spacing: 0.1em;
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none; 
+
+}
+nav li {
+    font-family: 'Work Sans';
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+.header-log li a {
+    cursor: pointer;
+    font-weight: bold;
+}
+ul li img{
+	height: 20px;
+}
+.header-log li a {
+  text-decoration: none;
+  color: inherit; /* hérite la couleur du texte environnant */
+}
+#contact-log {
+	width: 50%;
+    margin: auto;
+    margin-top: 170px;
+}
+#contact-log > * {
+	text-align: center;
+}
+
+#contact-log h2{
+	color: #1D6154;
+	margin-bottom: 20px;
+    font-family: 'Syne';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    text-align: center;
+}
+    
+#contact-log form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact-log input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact-log label {
+	margin: 2em 0 1em 0;
+	font-family: 'Work sans';
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+.foot-log{
+    margin-top: 200px;
+}
+
+.foot-log nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em;
+    text-decoration: none;
+}

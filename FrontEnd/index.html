@@ -7,103 +7,130 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-<header>
-	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-	<nav>
-		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
-</header>
-<main>
-	<section id="introduction">
-		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
-		</figure>
-		<article>
-			<h2>Designer d'espace</h2>
-			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
-		</article>
-	</section>
-	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<div class="gallery">
+	 <!-- Barre noire de connexion -->
+	<div id="admin-bar" class="admin-bar" style="display: none;">
+		<img src="./assets/icons/pen.png" alt="Icon edition">
+		<p>Mode édition</p>
+	</div>
+	<header>
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+		<nav>
+			<ul>
+				<li>projets</li>
+				<li>contact</li>
+				<li>
+					<a href="./login.html" id="login-link">login</a>
+					<a href="#" id="logout-link" style="display:none;">logout</a>
+				</li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="introduction">
 			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
+				<img src="./assets/images/sophie-bluel.png" alt="">
 			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>
-		</div>
-	</section>
-	<section id="contact">
-		<h2>Contact</h2>
-		<p>Vous avez un projet ? Discutons-en !</p>
-		<form action="#" method="post">
-			<label for="name">Nom</label>
-			<input type="text" name="name" id="name">
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email">
-			<label for="message">Message</label>
-			<textarea name="message" id="message" cols="30" rows="10"></textarea>
-			<input type="submit" value="Envoyer">
-		</form>
-	</section>
-</main>
+			<article>
+				<h2>Designer d'espace</h2>
+				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+			</article>
+		</section>
+		<section id="portfolio">
+			<div class="title-project">
+				<h2>Mes Projets</h2>
+					<!-- Lien Modifier visible seulement si connecté -->
+					<div class="bloc-edit">
+							<img src="./assets/icons/edit-button.png" alt="Modifier">
+							<p><a href="#">Modifier</a></p>
+					</div>
+			</div>
+			<div class="sous-projet">
+				<!-- Filtres genérer directement depuis le js -->
+			</div>
+			<div class="gallery">
+				<!-- Gallery genérer directement depuis le js -->
+			</div>
+		</section>
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>Vous avez un projet ? Discutons-en !</p>
+			<form action="#" method="post">
+				<label for="name">Nom</label>
+				<input type="text" name="name" id="name">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+				<label for="message">Message</label>
+				<textarea name="message" id="message" cols="30" rows="10"></textarea>
+				<input type="submit" value="Envoyer">
+			</form>
+		</section>
+	</main>
 
-<footer>
-	<nav>
-		<ul>
-			<li>Mentions Légales</li>
-		</ul>
-	</nav>
-</footer>
+	<footer>
+		<nav>
+			<ul>
+				<li>Mentions Légales</li>
+			</ul>
+		</nav>
+	</footer>
+
+	<!-- MODALE D'ÉDITION -->
+		<div id="modale-edition" class="modale-edition" style="display:none;">
+			<div class="contenu-modale">
+				<button id="retour-galerie" class="fleche-retour" style="display: none;" aria-label="Retour galerie">
+					<i class="fa-solid fa-arrow-left"></i>
+				</button>
+				<button id="fermer-modale" class="fermer-modale" aria-label="Fermer la modale">&times;</button>
+				<div class="title-modale">
+					<h3>Galerie photo</h3>
+					<h3>Ajout photo</h3>
+				</div>
+				<div id="message-utilisateur"></div>
+				<!-- Vues modale -->
+				<section id="vue-galerie" class="vue-modale active">
+					<div class="contenu-galerie">
+						<!-- Contenu galerie dynamique -->
+					</div>
+				</section>
+				<section id="vue-ajout" class="vue-modale">
+					<form id="form-ajout-media" class="form-ajout">
+						<!-- Bouton stylisé pour déclencher l’input file -->
+						<div class="upload-zone">
+							<div class="upload-preview" id="uploadPreview">
+								<img id="previewImage" src="./assets/icons/icon-image.png" alt="aperçu" style="display: none;" />
+								<button type="button" id="customUploadBtn">+ Ajouter photo</button>
+								<p>jpg, png : 4mo max</p>
+								<input type="file" id="fichier-media" name="image" accept="image/*" style="display: none;">
+							</div>
+						</div>
+						<div>
+							<label for="titre-media">Titre</label><br>
+							<input type="text" id="titre-media" name="titre" required><br><br>
+						</div>
+						<div class="categ">
+							<label for="categorie-media">Catégorie</label><br>
+							<select id="categorie-media" name="categorie" required>
+								<!-- Affiche dynamiquement les options ici-->
+							</select><br><br>
+						</div>
+						<button type="submit">Valider</button>
+					</form>
+				</section>
+				<!-- Bouton en bas pour basculer vers le formulaire d'ajout -->
+				<div class="bas-modale">
+					<button id="ouvrir-formulaire-ajout" class="bouton-ajout-photo">Ajouter une photo</button>
+				</div>
+			</div>
+		</div>
+
+	<script src="./assets/script.js"></script>
 </body>
 </html>
