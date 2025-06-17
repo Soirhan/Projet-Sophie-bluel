@@ -26,7 +26,7 @@ function updateUI(token) {
     toggleDisplay(logoutLink, false);
   }
 }
-
+////////////////////////////////////////////////////////
 function afficherMessageUtilisateur(message, type = "success") {
   const zoneMessage = document.getElementById("message-utilisateur");
   if (!zoneMessage) return;
@@ -34,9 +34,9 @@ function afficherMessageUtilisateur(message, type = "success") {
   zoneMessage.className = type;
   setTimeout(() => {
     zoneMessage.textContent = "";
-  }, 3000);
+  }, 3000); // le message s'affiche pendant 3 sec
 }
-
+///////////////////////////////////////////////////////
 function ajouterMediaDansGaleriePrincipale(work) {
   const gallery = document.querySelector(".gallery");
   if (!gallery) return;
